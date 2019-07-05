@@ -1,5 +1,5 @@
 # Contacts
-Cette repository a pour objectif de créer une application Web JEE basée sur une partie BackEnd développée en utilisant Spring Boot (v2.1.6.BUILD-SNAPSHOT) et une partie FrontEnt développée en utilisant le Framework Angular 8 :
+Cette repository a pour objectif de créer une application Web JEE basée sur une partie BackEnd développée en utilisant Spring Boot (v2.1.6.BUILD-SNAPSHOT) et une partie FrontEnt développée en utilisant le Framework Angularr/cli@8.0.6 :
 
 ****Partie BackEnd:
    - Créer une entité JPA 
