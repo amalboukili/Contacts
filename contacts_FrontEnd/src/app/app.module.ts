@@ -1,3 +1,4 @@
+import { ContactsService } from './../services/contacts.service';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -21,7 +22,7 @@ const appRoutes: Routes=[
   imports: [
     BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule
   ],
-  providers: [],
+  providers: [ContactsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
