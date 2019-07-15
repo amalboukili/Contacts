@@ -12,11 +12,19 @@ import {HttpClient} from '@angular/common/http'
 })
 export class ContactsComponent implements OnInit {
  pageCotacts:any;
-  //injection des dependantes
+ motCle:string="";
+ currentPage:number=0;
+ size:number=2;
+ //******Declarer un tableau de pagination
+pages:Array<number>;
+//pages:any;
+
+
+  //******injection des dependantes
   constructor(private http:HttpClient, public contactservice:ContactsService) { }
 
   ngOnInit() {
-    //le traitement qui se fait a l'initialisation
+    //******le traitement qui se fait a l'initialisation
     // this.http.get("http://localhost:8081/chercherContacts")
     // .subscribe(data=>{
     //   this.pageCotacts=data;
@@ -24,12 +32,26 @@ export class ContactsComponent implements OnInit {
     //   console.log(err);
     // }
     // )
-    this.contactservice.getContacts()
+    
+  }
+
+  doSearch(){
+    this.contactservice.getContacts(this.motCle, this.currentPage, this.size)
     .subscribe(data=>{
       this.pageCotacts=data;
+      this.pages= new Array(data.totalPages);
     }, err=>{
       console.log(err);
     })
+  }
+
+  chercher(){
+    this.doSearch();
+  }
+  gotoPage(i:number){
+    this.currentPage=i;
+    this.doSearch();
+
   }
 
 }

@@ -2,6 +2,11 @@
     <div class="card">
         <div class="card-header text-white bg-primary">Liste des contacts</div>
         <div class="card-body">
+            <div class="form-group">
+                <label> <b>Mot Clé : </b></label>
+                <input type="text" [(ngModel)]="motCle" />
+                <button class="btn btn-primary" (click)="chercher()">Chercher</button>
+            </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -20,6 +25,16 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="container">
+                <ul class="nav nav-pills">
+                    <li [ngClass]="{'active': currentPage==(i+1)}" *ngFor="let p of pages; let i=index">
+                        <a class="nav-link clickable" (click)="gotoPage(i)">{{i+1}}</a>
+                    </li>
+                </ul>
+
+
+            </div>
+
         </div>
     </div>
 </div>
