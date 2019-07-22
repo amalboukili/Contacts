@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
   infos={
-    name :'amel',
-    email :'amel@gmail.com'
+    name :'Amal BOUKILI',
+    email :'amal@gmail.com'
   };
   constructor() { }
 
